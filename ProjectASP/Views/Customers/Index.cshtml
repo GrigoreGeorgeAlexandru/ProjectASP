@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Lista clienti";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@foreach (var customer in ViewBag.Customers)
+{
+    <h2>@customer.CustomerName </h2>
+    <p>@customer.CustomerPassword</p>
+    <p>@customer.CustomerEmail</p>
+    <p>@customer.CustomerPhone</p>
+    <p>@customer.CustomerAddress </p>
+    <a href="/Customers/Show/@customer.Id">Afisare client</a>
+    <br />
+    <hr />
+    <br />
+}
+<a href="/Customers/Index/">Afisare lista clienti</a>
+<br />
+<a href="/Customers/New">Adauga client</a>
+<br />
+

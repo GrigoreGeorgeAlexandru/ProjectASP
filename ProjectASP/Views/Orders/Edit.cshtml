@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Editare comanda";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form method="post" action="/Orders/Edit/@ViewBag.Order.OrderId">
+
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+
+    <label>data comanda</label>
+    <br /> <input type="text" name="OrderDate" value="@ViewBag.Order.OrderDate" />
+    <br /><br />
+
+    <label>detalii comanda</label>
+    <br /> <input type="text" name="OrderDetails" value="@ViewBag.Order.OrderDetails" />
+    <br /><br />
+
+   
+    <button class="btn btn-success" type="submit">Modifica comanda</button>
+</form>
+

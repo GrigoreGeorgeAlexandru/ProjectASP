@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Lista comenzi";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@foreach (var order in ViewBag.Orders)
+{
+    
+    <p>@order.OrderDate</p>
+    <p>@order.OrderDetails</p>
+    <a href="/Orders/Show/@order.Id">Afisare comanda</a>
+    <br />
+    <hr />
+    <br />
+}
+<a href="/Orders/Index/">Afisare lista comenzi</a>
+<br />
+<a href="/Orders/New">Adauga comanda</a>
+<br />
+

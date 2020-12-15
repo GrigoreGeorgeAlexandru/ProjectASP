@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Adaugare articol</h2>
+<form method="post" action="/Articles/New">
+    <label>Titlu articol</label>
+    <input type="text" name="Title" />
+    <br />
+    <label>Continut articol</label>
+    <textarea name="Content"></textarea>
+    <br />
+
+
+
+    <label>Selectati categoria</label>
+
+    @* name o sa fie CategoryId si ce este in value se paseaza catre server pe cheia CategoryId
+        name este atributul pe care il trimite catre controller prin post
+        iar denumirea categoriei este valoarea afisata in dropdown *@
+
+    <select name="CategoryId">
+        @foreach (var category in ViewBag.Categories)
+        {
+            <option value="@category.CategoryId">@category.CategoryName</option>
+        }
+    </select>
+    <br />
+    <button type="submit">Adauga articol</button>
+</form>
+
+

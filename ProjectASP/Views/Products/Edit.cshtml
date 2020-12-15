@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Editare produs";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form method="post" action="/Products/Edit/@ViewBag.Product.ProductId">
+
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+
+    <label>nume produs</label>
+    <br /> <input type="text" name="ProductName" value="@ViewBag.Product.ProductName" />
+    <br /><br />
+
+    <label>pret produs</label>
+    <br /> <input type="text" name="ProductPrice" value="@ViewBag.Product.ProductPrice" />
+    <br /><br />
+
+    <label>culoare produs</label>
+    <br /> <input type="text" name="ProductColor" value="@ViewBag.Product.ProductColor" />
+    <br /><br />
+
+
+    <label>marime produs</label>
+    <br /> <input type="text" name="ProductSize" value="@ViewBag.Product.ProductSize" />
+    <br /><br />
+
+    <label>descriere produs</label>
+    <br /> <input type="text" name="ProductDescription" value="@ViewBag.Product.ProductDescription" />
+    <br /><br />
+
+
+    <button class="btn btn-success" type="submit">Modifica produsul</button>
+</form>
+

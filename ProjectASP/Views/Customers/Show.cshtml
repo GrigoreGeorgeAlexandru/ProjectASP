@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Afisare client";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>@ViewBag.Customer.CustomerName</p>
+<p>@ViewBag.Customer.CustomerPassword</p>
+<p>@ViewBag.Customer.CustomerEmail</p>
+<p>@ViewBag.Customer.CustomerPhone</p>
+<p>@ViewBag.Customer.CustomerAddress</p>
+
+
+<form method="post" action="/Customers/Delete/@ViewBag.Customer.CustomerId">
+
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+
+    <button class="btn btn-success" type="submit">Sterge clientul</button>
+
+</form>
+<br />
+<a class="btn btn-success" href="/Customers/Index/">Afisare lista clienti</a>
+
+<br />
+
+<hr />
+<br />
+

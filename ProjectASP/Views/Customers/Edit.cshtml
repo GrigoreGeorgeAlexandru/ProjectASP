@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Editare client";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form method="post" action="/Customers/Edit/@ViewBag.Customer.CustomerId">
+
+    @Html.HttpMethodOverride(HttpVerbs.Put)
+
+    <label>Nume client</label>
+    <br /> <input type="text" name="CustomerName" value="@ViewBag.Customer.CustomerName" />
+    <br /><br />
+
+    <label>parola client</label>
+    <br /> <input type="text" name="CustomerPassword" value="@ViewBag.Customer.CustomerPassword" />
+    <br /><br />
+
+    <label>email client</label>
+    <br /> <input type="text" name="CustomerEmail" value="@ViewBag.Customer.CustomerEmail" />
+    <br /><br />
+
+    <label>numar telefon client</label>
+    <br /> <input type="text" name="CustomerPhone" value="@ViewBag.Customer.CustomerPhone" />
+    <br /><br />
+    <label>adresa client</label>
+    <br /> <input type="text" name="CustomerAddress" value="@ViewBag.Customer.CustomerAddress" />
+    <br /><br />
+
+    <button class="btn btn-success" type="submit">Modifica clientul</button>
+</form>
+

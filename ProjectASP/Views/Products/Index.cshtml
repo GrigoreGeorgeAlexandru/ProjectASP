@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Lista produse";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@foreach (var product in ViewBag.Products)
+{
+    <h2>@product.ProductName</h2>
+    <p>@product.ProductPrice</p>
+    <p>@product.ProductColor</p>
+    <p>@product.ProductSize</p>
+    <p>@product.ProductDescription</p>
+    <a class="btn btn-success" href="/Products/Show/@product.ProductId">Afisare produse</a>
+    <a class="btn btn-success" href="/Products/Edit/@product.ProductId">Editare produse</a>
+    <br />
+    <hr />
+    <br />
+}
+
+<br />
+<a href="/Products/New">Adauga produs</a>
+<br />
+

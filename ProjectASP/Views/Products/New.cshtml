@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Adaugare Produs";
+}
+
+
+
+<h2>Adaugare produs</h2>
+
+<form method="post" action="/Products/New">
+
+   
+
+    <label>nume produs</label>
+    <br /> <input type="text" name="ProductName" />
+    <br /><br />
+
+    <label>pret produs</label>
+    <br /> <input type="text" name="ProductPrice" />
+    <br /><br />
+
+    <label>culoare produs</label>
+    <br /> <input type="text" name="ProductColor"  />
+    <br /><br />
+
+
+    <label>marime produs</label>
+    <br /> <input type="text" name="ProductSize" />
+    <br /><br />
+
+    <label>descriere produs</label>
+    <br /> <input type="text" name="ProductDescription"  />
+    <br /><br />
+
+
+
+
+
+
+    <button class="btn btn-success" type="submit">Adauga produs</button>
+</form>
+

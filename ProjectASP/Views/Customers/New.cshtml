@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Adaugare client";
+}
+
+
+
+<h2>Adaugare client</h2>
+
+<form method="post" action="/Customers/New">
+
+    <label>Nume client</label>
+    <br />
+    <input type="text" name="CustomerName" />
+    <br /><br />
+
+
+    <label>parola client</label>
+    <br />
+    <input type="text" name="CustomerPassword" />
+    <br /><br />
+
+
+    <label>Email client</label>
+    <br />
+    <input type="text" name="CustomerEmail" />
+    <br /><br />
+
+    <label>numar telefon client</label>
+    <br />
+    <input type="text" name="CustomerPhone" />
+    <br /><br />
+
+    <label>adresa client</label>
+    <br />
+    <input type="text" name="CustomerAddress" />
+    <br /><br />
+
+
+
+
+    <button class="btn btn-success" type="submit">Adauga client</button>
+</form>
+

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Afisare produs";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>@ViewBag.Product.ProductName</p>
+<p>@ViewBag.Product.ProductPrice</p>
+<p>@ViewBag.Product.ProductColor</p>
+<p>@ViewBag.Product.ProductSize</p>
+<p>@ViewBag.Product.ProductDescription</p>
+
+
+
+<form method="post" action="/Products/Delete/@ViewBag.Product.ProductId">
+
+    @Html.HttpMethodOverride(HttpVerbs.Delete)
+
+    <button class="btn btn-success" type="submit">Sterge produsul</button>
+
+</form>
+<br />
+<a class="btn btn-success" href="/Products/Index/">Afisare lista produse</a>
+
+<br />
+
+<hr />
+<br />
+
