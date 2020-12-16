@@ -5,11 +5,16 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Laborator4App.Models;
 using project.Models;
+using System.Collections.Generic;
+using System.Web.Mvc;
+
 namespace ProjectASP.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public IEnumerable<SelectListItem> AllRoles { get; set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -28,7 +33,8 @@ namespace ProjectASP.Models
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext,
             ProjectASP.Migrations.Configuration>("DefaultConnection"));
         }
-
+        
+        
         public DbSet<Article> Articles { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
