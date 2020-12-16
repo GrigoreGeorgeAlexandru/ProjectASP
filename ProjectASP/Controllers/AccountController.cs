@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ProjectASP.Models;
+using System.Net;
 
 namespace ProjectASP.Controllers
 {
@@ -345,9 +346,10 @@ namespace ProjectASP.Controllers
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
                     return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
             }
+                 
         }
 
-        //
+        
         // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
         [AllowAnonymous]
@@ -367,7 +369,7 @@ namespace ProjectASP.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email};
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -385,7 +387,8 @@ namespace ProjectASP.Controllers
             return View(model);
         }
 
-        //
+        
+
         // POST: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -481,5 +484,6 @@ namespace ProjectASP.Controllers
             }
         }
         #endregion
-    }
+    
+     }
 }
