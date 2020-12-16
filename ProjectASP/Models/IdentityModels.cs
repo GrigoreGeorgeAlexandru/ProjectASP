@@ -3,7 +3,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-
+using Laborator4App.Models;
+using project.Models;
 namespace ProjectASP.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
@@ -18,12 +19,24 @@ namespace ProjectASP.Models
         }
     }
 
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext,
+            ProjectASP.Migrations.Configuration>("DefaultConnection"));
         }
+
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+       // public DbSet<Customer> Customers { get; set; }
+
+        //public DbSet<Comment> Comments { get; set; }
 
         public static ApplicationDbContext Create()
         {
