@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+using ProjectASP.Models;
 namespace ProjectASP.Models
 {
     public class ExternalLoginConfirmationViewModel
@@ -112,5 +112,6 @@ namespace ProjectASP.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
-    
+    
+
 }

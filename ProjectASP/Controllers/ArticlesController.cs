@@ -1,11 +1,11 @@
-﻿using Laborator4App.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ProjectASP.Models;
 
-namespace Laborator4App.Controllers
+namespace ProjectASP.Controllers
 {
     public class ArticlesController : Controller
     {

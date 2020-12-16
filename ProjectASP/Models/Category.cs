@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using ProjectASP.Models;
 
-namespace Laborator4App.Models
+namespace ProjectASP.Models
 {
     public class Category
     {

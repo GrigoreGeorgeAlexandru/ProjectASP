@@ -5,7 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace Laborator4App.Models
+namespace ProjectASP.Models
 {
     public class Article
     {

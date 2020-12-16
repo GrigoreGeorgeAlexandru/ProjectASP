@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
-using System.Linq;
-using System.Web;
+using ProjectASP.Models;
 
-
-namespace project.Models
+namespace ProjectASP.Controllers
 {
     public class Order
     {

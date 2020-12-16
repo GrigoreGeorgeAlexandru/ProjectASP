@@ -3,8 +3,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using Laborator4App.Models;
-using project.Models;
+//using Laborator4App.Models;
+using ProjectASP.Controllers;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -13,6 +13,7 @@ namespace ProjectASP.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+
         public IEnumerable<SelectListItem> AllRoles { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -40,7 +41,6 @@ namespace ProjectASP.Models
         public DbSet<Product> Products { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public IEnumerable<SelectListItem> AllRoles { get; set; }
         // public DbSet<Customer> Customers { get; set; }
 
         //public DbSet<Comment> Comments { get; set; }

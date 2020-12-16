@@ -58,7 +58,21 @@ namespace ProjectASP.Controllers
             ViewBag.userRole = userRole.RoleId;
             return View(user);
         }
-
+        [NonAction]
+        public IEnumerable<SelectListItem> GetAllRoles()
+        {
+            var selectList = new List<SelectListItem>();
+            var roles = from role in db.Roles select role;
+            foreach (var role in roles)
+            {
+                selectList.Add(new SelectListItem
+                {
+                    Value = role.Id.ToString(),
+                    Text = role.Name.ToString()
+                });
+            }
+            return selectList;
+        }
         [HttpPut]
         public ActionResult Edit(string id, ApplicationUser newData)
         {
@@ -101,22 +115,7 @@ namespace ProjectASP.Controllers
             }
         }
 
-        [NonAction]
-        public IEnumerable<SelectListItem> GetAllRoles()
-        {
-            var selectList = new List<SelectListItem>();
-
-            var roles = from role in db.Roles select role;
-            foreach (var role in roles)
-            {
-                selectList.Add(new SelectListItem
-                {
-                    Value = role.Id.ToString(),
-                    Text = role.Name.ToString()
-                });
-            }
-            return selectList;
-        }
+       
 
         [HttpDelete]
         public ActionResult Delete(string id)
@@ -127,14 +126,14 @@ namespace ProjectASP.Controllers
 
             var user = UserManager.Users.FirstOrDefault(u => u.Id == id);
 
-           // var articles = db.Articles.Where(a => a.UserId == id);
-            //foreach (var article in articles)
+         //  var articles = db.Articles.Where(a => a.UserId == id);
+          // foreach (var article in Articles)
             //{
-              //  db.Articles.Remove(article);
+             //   db.Articles.Remove(article);
 
-            //}
+          //  }
 
-           // var comments = db.Comments.Where(comm => comm.UserId == id);
+            //var comments = db.Comments.Where(comm => comm.UserId == id);
            // foreach (var comment in comments)
             //{
              //   db.Comments.Remove(comment);

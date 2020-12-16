@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-
-namespace project.Models
+using ProjectASP.Controllers;
+namespace ProjectASP.Models
 {
     public class Customer
     {

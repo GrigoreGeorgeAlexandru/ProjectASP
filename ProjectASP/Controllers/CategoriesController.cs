@@ -1,11 +1,11 @@
-﻿using Laborator4App.Models;
+﻿using ProjectASP.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Laborator4App.Controllers
+namespace ProjectASP.Controllers
 {
     public class CategoriesController : Controller
     {
