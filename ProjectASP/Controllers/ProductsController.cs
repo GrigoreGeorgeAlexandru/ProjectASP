@@ -11,7 +11,7 @@ namespace ProjectASP.Controllers
     public class ProductsController : Controller
     {
         // GET: Products
-        private OrderDBContext db = new OrderDBContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
             var products = from product in db.Products

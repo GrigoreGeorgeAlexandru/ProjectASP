@@ -169,8 +169,11 @@ namespace ProjectASP.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false,
                    rememberBrowser: false);
-                    UserManager.AddToRole(user.Id, "User");
+                  UserManager.AddToRole(user.Id, "User");
+                    return RedirectToAction("Index", "Home");
+
                 }
+                AddErrors(result);
             }
                 // If we got this far, something failed, redisplay form
                 return View(model);

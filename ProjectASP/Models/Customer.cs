@@ -37,6 +37,7 @@ namespace ProjectASP.Models
 
     }
 
+<<<<<<< Updated upstream
     public class CustomerDBContext : DbContext
     {
         public CustomerDBContext() : base("DBConnectionString") { }
@@ -44,6 +45,14 @@ namespace ProjectASP.Models
         public DbSet<Order> Orders { get; set; }
 
    }
+=======
+   public class CustomerDBContext : DbContext
+   {
+       public CustomerDBContext() : base("DBConnectionString") { }
+       public DbSet<Customer> Customers { get; set; }
+       public DbSet<Order> Orders { get; set; }
+  }
+>>>>>>> Stashed changes
 
 
 

@@ -15,9 +15,9 @@ namespace ProjectASP.Controllers
     public class CustomersController : Controller
     {
         // GET: Customers
-        
 
-        private CustomerDBContext db = new CustomerDBContext();
+
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
             var customers = from customer in db.Customers

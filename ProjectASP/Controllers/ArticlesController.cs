@@ -9,7 +9,7 @@ namespace ProjectASP.Controllers
 {
     public class ArticlesController : Controller
     {
-        private ArticleDBContext db = new ArticleDBContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Article
         public ActionResult Index()

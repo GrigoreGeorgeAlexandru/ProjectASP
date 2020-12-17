@@ -10,8 +10,7 @@ namespace ProjectASP.Controllers
     public class OrdersController : Controller
     {
 
-
-        private OrderDBContext db = new OrderDBContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
             var orders = from order in db.Orders

@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
 namespace ProjectASP.Controllers
 {
     [Authorize(Roles = "Admin")]
     public class CategoriesController : Controller
     {
-        private ArticleDBContext db = new ArticleDBContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Category
         public ActionResult Index()
