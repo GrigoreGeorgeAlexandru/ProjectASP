@@ -72,7 +72,8 @@ namespace ProjectASP.Controllers
                 });
             }
             return selectList;
-        }
+        }
+
         [HttpPut]
         public ActionResult Edit(string id, ApplicationUser newData)
         {
