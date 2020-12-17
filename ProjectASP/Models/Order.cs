@@ -38,16 +38,16 @@ namespace ProjectASP.Controllers
 
 
     }
-    //public class OrderDBContext : DbContext
-    //{
-      //  public OrderDBContext() : base("DBConnectionString") { }
-        //public DbSet<Order> Orders { get; set; }
-        //public DbSet<Product> Products { get; set; }
+    public class OrderDBContext : DbContext
+    {
+        public OrderDBContext() : base("DBConnectionString") { }
+       public DbSet<Order> Orders { get; set; }
+       public DbSet<Product> Products { get; set; }
 
-        //public DbSet<Shipment> Shipments { get; set; }
+       public DbSet<Shipment> Shipments { get; set; }
 
-        //public DbSet<SoldItems> SoldItems { get; set; }
-    //}
+        public DbSet<SoldItems> SoldItems { get; set; }
+    }
 
 
 

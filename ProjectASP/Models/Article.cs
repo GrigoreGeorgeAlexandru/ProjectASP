@@ -22,10 +22,10 @@ namespace ProjectASP.Models
         public virtual Category Category { get; set; }
     }
 
-    //public class ArticleDBContext : DbContext
-    //{
-        //public ArticleDBContext() : base("DBConnectionString") { }
-        //public DbSet<Article> Articles { get; set; }
-        //public DbSet<Category> Categories { get; set; }
-   // }
+    public class ArticleDBContext : DbContext
+    {
+        public ArticleDBContext() : base("DBConnectionString") { }
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Category> Categories { get; set; }
+    }
 }
