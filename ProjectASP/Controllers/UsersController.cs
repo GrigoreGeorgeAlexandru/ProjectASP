@@ -34,8 +34,7 @@ namespace ProjectASP.Controllers
 
             ViewBag.utilizatorCurent = User.Identity.GetUserId();
 
-            //var userRole = roles.Where(j => j.Id == user.Roles.FirstOrDefault().RoleId).
-            //               Select(a => a.Name).FirstOrDefault();
+            //var userRole = roles.Where(j => j.Id == user.Roles.FirstOrDefault().RoleId).Select(a => a.Name).FirstOrDefault();
 
             string currentRole = user.Roles.FirstOrDefault().RoleId;
 
@@ -126,12 +125,12 @@ namespace ProjectASP.Controllers
 
             var user = UserManager.Users.FirstOrDefault(u => u.Id == id);
 
-         //  var articles = db.Articles.Where(a => a.UserId == id);
-          // foreach (var article in Articles)
-            //{
-             //   db.Articles.Remove(article);
+           var articles = db.Articles.Where(a => a.UserId == id);
+           foreach (var article in articles)
+            {
+                db.Articles.Remove(article);
 
-          //  }
+           }
 
             //var comments = db.Comments.Where(comm => comm.UserId == id);
            // foreach (var comment in comments)
