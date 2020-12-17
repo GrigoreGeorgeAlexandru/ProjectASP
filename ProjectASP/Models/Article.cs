@@ -17,14 +17,15 @@ namespace ProjectASP.Models
         public string Content { get; set; }
         public DateTime Date { get; set; }
         public int CategoryId { get; set; }
-
+        public string UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
         public virtual Category Category { get; set; }
     }
 
-    public class ArticleDBContext : DbContext
-    {
-        public ArticleDBContext() : base("DBConnectionString") { }
-        public DbSet<Article> Articles { get; set; }
-        public DbSet<Category> Categories { get; set; }
-    }
+    //public class ArticleDBContext : DbContext
+    //{
+        //public ArticleDBContext() : base("DBConnectionString") { }
+        //public DbSet<Article> Articles { get; set; }
+        //public DbSet<Category> Categories { get; set; }
+   // }
 }

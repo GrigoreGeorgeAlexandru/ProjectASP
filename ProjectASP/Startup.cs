@@ -12,8 +12,10 @@ namespace ProjectASP
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            CreateAdminUserAndApplicationRoles();
         }
-      
+
+
         private void CreateAdminUserAndApplicationRoles()
         {
             ApplicationDbContext context = new ApplicationDbContext();

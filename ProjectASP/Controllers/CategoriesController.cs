@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace ProjectASP.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoriesController : Controller
     {
         private ArticleDBContext db = new ArticleDBContext();
